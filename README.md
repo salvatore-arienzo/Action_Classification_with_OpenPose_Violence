@@ -1,3 +1,5 @@
 # ACF
-## To install requirements: 
+### To install requirements: 
+```
 conda create --name envName --file requirements.txt
+```
