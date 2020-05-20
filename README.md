@@ -1,4 +1,4 @@
-# ACF
+# Action Classification with OpenPose: Violence
 ### To install requirements full requirements:
 ```
 conda create --name envName --file requirements_full.txt
