@@ -7,9 +7,9 @@ The aim of this project is to use a skeleton estimation performed through OpenPo
 
 
 ### Prerequisites:
-Download the dataset [here](https://gofile.io/d/bwIIOh).
-Download the model [here](https://gofile.io/d/Fq1iHY).
-Install requirements file:
+Download the dataset [here](https://gofile.io/d/bwIIOh).  
+Download the model [here](https://gofile.io/d/Fq1iHY).  
+Install requirements file:  
 ```
 conda create --name envName --file requirements_full.txt
 ```
