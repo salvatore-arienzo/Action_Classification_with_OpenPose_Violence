@@ -15,3 +15,5 @@ scipy=1.3.3
 tensorflow=2.0.0
 
 ```
+### References
+OpenPose implementatin used [Tensorflow 2.0 Realtime Multi-Person Pose Estimation](https://github.com/michalfaber/tensorflow_Realtime_Multi-Person_Pose_Estimation)
