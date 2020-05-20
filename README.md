@@ -27,13 +27,13 @@ tensorflow=2.0.0
 ```
 
 ### Script and Notebooks description:
-**- dataset.csv** and **datasetNoZero.csv**: these are the dataset used for training the neural network. In the second file all missing values have been filled with a valid value, while in the first one, missing values have been left untouched.
-**detect_body_parts.ipynb**: in this notebook has been performed all the operation for extracting body parts coordinates and calculating the distances.
-**dataset_framing** Folder: contains links for downloading the data and a notebook to perform the framing.
-**calculateDistance.py**: this scripts contains the implementation of how distance between body parts have been calculated.
-**openpose_example.ipynb**: this notebook shows the usage of openpose with some grafical examples.
-**imputation.ipynb**: in this notebook is performed the imputation process, to generate the datasetNoZero file.
-**model.ipynb**: this is the model of the Neural Network used.
+**- dataset.csv** and **datasetNoZero.csv**: these are the dataset used for training the neural network. In the second file all missing values have been filled with a valid value, while in the first one, missing values have been left untouched.  
+**- detect_body_parts.ipynb**: in this notebook has been performed all the operation for extracting body parts coordinates and calculating the distances.  
+**- dataset_framing** Folder: contains links for downloading the data and a notebook to perform the framing.   
+**- calculateDistance.py**: this scripts contains the implementation of how distance between body parts have been calculated.  
+**- openpose_example.ipynb**: this notebook shows the usage of openpose with some grafical examples.  
+**- imputation.ipynb**: in this notebook is performed the imputation process, to generate the datasetNoZero file.  
+**- model.ipynb**: this is the model of the Neural Network used.  
 
 ### References
 OpenPose implementation used: [Tensorflow 2.0 Realtime Multi-Person Pose Estimation](https://github.com/michalfaber/tensorflow_Realtime_Multi-Person_Pose_Estimation)
