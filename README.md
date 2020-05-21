@@ -37,10 +37,10 @@ tensorflow=2.0.0
 ### Some Examples of Predictions:
 
 <p align="center">
-<img width="300" height="300" src="https://ibb.co/8b9gz4D"> <img width="300" height="300" src="https://ibb.co/8b9gz4D">
+<img width="300" height="300" src="https://i.ibb.co/T1tMKqB/Annotation-2020-05-21-143421.jpg"> <img width="300" height="300" src="https://i.ibb.co/T1tMKqB/Annotation-2020-05-21-143421.jpg">
 </p>
 <p align="center">
-<img width="300" height="300" src="https://ibb.co/CbyNmYc"> <img width="300" height="300" src="https://ibb.co/HFhd70F">
+<img width="300" height="300" src="https://i.ibb.co/y6CGdZ9/Annotation-2020-05-21-143347.jpg"> <img width="300" height="300" src="https://i.ibb.co/zn6Js1n/Annotation-2020-05-21-143407.jpg">
 </p>
 
 
