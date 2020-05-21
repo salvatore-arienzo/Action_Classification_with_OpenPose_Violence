@@ -8,7 +8,6 @@ The aim of this project is to use a skeleton estimation performed through OpenPo
 
 ### Prerequisites:
 Download the dataset [here](https://gofile.io/d/bwIIOh).  
-Download the model [here](https://gofile.io/d/Fq1iHY).  
 Install requirements file:  
 ```
 conda create --name envName --file requirements_full.txt
@@ -34,6 +33,17 @@ tensorflow=2.0.0
 **- openpose_example.ipynb**: this notebook shows the usage of openpose with some grafical examples.  
 **- imputation.ipynb**: in this notebook is performed the imputation process, to generate the datasetNoZero file.  
 **- model.ipynb**: this is the model of the Neural Network used.  
+
+### Some Examples of Predictions:
+
+<p align="center">
+<img width="300" height="300" src="https://ibb.co/8b9gz4D"> <img width="300" height="300" src="https://ibb.co/8b9gz4D">
+</p>
+<p align="center">
+<img width="300" height="300" src="https://ibb.co/CbyNmYc"> <img width="300" height="300" src="https://ibb.co/HFhd70F">
+</p>
+
+
 
 ### References
 OpenPose implementation used: [Tensorflow 2.0 Realtime Multi-Person Pose Estimation](https://github.com/michalfaber/tensorflow_Realtime_Multi-Person_Pose_Estimation)
