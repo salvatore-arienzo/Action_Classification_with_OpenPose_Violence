@@ -1,2 +1,2 @@
-Download the pre-trained model from https://gofile.io/d/Fq1iHY
-Or just train the model notebook.
+weights.h5 = weights of open pose
+model_NN = weights of the neural network for predictions
