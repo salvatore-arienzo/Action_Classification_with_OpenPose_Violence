@@ -1,1 +1,1 @@
-Demo for videos
+Examples of usage with videos
