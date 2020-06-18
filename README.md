@@ -26,7 +26,7 @@ tensorflow=2.0.0
 ```
 
 ### Script and Notebooks description:
-**demo** folder: In this folder there are some example  
+**- demo** folder: In this folder there are some example  
 **- detect_body_parts.ipynb**: in this notebook has been performed all the operation for extracting body parts coordinates and calculating the distances.  
 **- dataset_framing** Folder: contains links for downloading the data and a notebook to perform the framing.   
 **- calculateDistance.py**: this scripts contains the implementation of how distance between body parts have been calculated.  
