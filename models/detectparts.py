@@ -11,6 +11,25 @@ from tensorflow.keras.models import load_model
 from models.model import get_model
 from models.calculateDistance import calculateDistances
 
+def distance(x1,y1,x2,y2):
+    return math.sqrt((x1-x2)**2+(y1-y2)**2)
+
+    
+
+def get_idClosePeople(persone):
+    distMin = distance(persone[0][0], persone[0][1], persone[1][0],persone[1][1])
+    idPerson = (persone[0][2], persone[1][2])
+    for i in range(len(persone)):
+        for j in range(i+1,len(persone)):
+            dist = distance(persone[i][0], persone[i][1], persone[j][0],persone[j][1])
+            if dist < distMin:
+                distMin = dist
+                idPerson = (persone[i][2], persone[j][2])
+    return idPerson
+                
+            
+    
+
 def get_bodyparts(inputpath, nFrame):
     
     weights_path = "weights.h5"
@@ -218,15 +237,36 @@ def get_bodyparts(inputpath, nFrame):
                 deleteIdx.append(i)
         subset = np.delete(subset, deleteIdx, axis=0)
         scale = 8
-        if len(subset)==2:  #Control to check if OpenPose detected 2 people
+        
+        if len(subset)>=2:  #Control to check if OpenPose detected 2 people
+            
             df.at[len(df)]=0 #Initialize an Empty Row
             df.at[len(df)-1, "idFrame"] = numFrame
             df.at[len(df)-1, "Violence"] = 1 #1 = Non violence, MAKE SURE TO CHANGE TO 0 IF YOU ARE CALCULATING
-                                                              # VIOLENCE FOLDER BODYPARTS
+            coordIdPerson = []                                                 # VIOLENCE FOLDER BODYPARTS
             for i in range(len(subset)):
                 for j in range(len(subset[i])-2):
                     cella = subset[i][j]
-                    nomeParte = bodyparts[j] + str(i+1) #Building the string name
+                    if cella != -1:
+                        X = candidate[cella.astype(int), 0] * scale
+                        Y = candidate[cella.astype(int), 1] * scale
+                        coordIdPerson.append((X,Y,i))
+                        break
+            idPerson = get_idClosePeople(coordIdPerson)
+            idPerson1 = idPerson[0]
+            idPerson2 = idPerson[1]
+            for j in range(len(subset[idPerson1])-2):
+                    cella = subset[idPerson1][j]
+                    nomeParte = bodyparts[j] + "1" #Building the string name
+                    if cella != -1:
+                        X = candidate[cella.astype(int), 0] * scale
+                        Y = candidate[cella.astype(int), 1] * scale
+                        df.at[len(df)-1,"X"+nomeParte] = X
+                        df.at[len(df)-1,"Y"+nomeParte] = Y #Saving Values in the row
+                        
+            for j in range(len(subset[idPerson2])-2):
+                    cella = subset[i][j]
+                    nomeParte = bodyparts[j] + "2" #Building the string name
                     if cella != -1:
                         X = candidate[cella.astype(int), 0] * scale
                         Y = candidate[cella.astype(int), 1] * scale
@@ -235,3 +275,15 @@ def get_bodyparts(inputpath, nFrame):
             calculateDistances(df) #Calculating the distance for the single frame
         numFrame= numFrame+1
     return df
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
