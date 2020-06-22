@@ -10,6 +10,8 @@ from models.config import get_default_configuration
 from tensorflow.keras.models import load_model
 from models.model import get_model
 from models.calculateDistance import calculateDistances
+from models.NearestPairResearch import coppiaPiuVicina
+from models.NearestPairResearch import inserimentoOrdinato
 
 def distance(x1,y1,x2,y2):
     return math.sqrt((x1-x2)**2+(y1-y2)**2)
@@ -243,18 +245,21 @@ def get_bodyparts(inputpath, nFrame):
             df.at[len(df)]=0 #Initialize an Empty Row
             df.at[len(df)-1, "idFrame"] = numFrame
             df.at[len(df)-1, "Violence"] = 1 #1 = Non violence, MAKE SURE TO CHANGE TO 0 IF YOU ARE CALCULATING
-            coordIdPerson = []                                                 # VIOLENCE FOLDER BODYPARTS
+            coordIdPersonX = []   # VIOLENCE FOLDER BODYPARTS
+            coordIdPersonY = []   
             for i in range(len(subset)):
                 for j in range(len(subset[i])-2):
                     cella = subset[i][j]
                     if cella != -1:
                         X = candidate[cella.astype(int), 0] * scale
                         Y = candidate[cella.astype(int), 1] * scale
-                        coordIdPerson.append((X,Y,i))
+                        #coordIdPerson.append((X,Y,i))
+                        inserimentoOrdinato(coordIdPersonX,(X,Y,i),0)
+                        inserimentoOrdinato(coordIdPersonY,(X,Y,i),1)
                         break
-            idPerson = get_idClosePeople(coordIdPerson)
-            idPerson1 = idPerson[0]
-            idPerson2 = idPerson[1]
+            idPerson = coppiaPiuVicina(coordIdPersonX,coordIdPersonY, len(coordIdPersonX))
+            idPerson1 = idPerson[0][2]
+            idPerson2 = idPerson[1][2]
             for j in range(len(subset[idPerson1])-2):
                     cella = subset[idPerson1][j]
                     nomeParte = bodyparts[j] + "1" #Building the string name
