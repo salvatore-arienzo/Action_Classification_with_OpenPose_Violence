@@ -98,7 +98,7 @@ def swap(A, x, y):
 
 def inserimentoOrdinato(array, val, tipo):
     coordinata = abs(tipo - 1)
-    print(array)
+    #print(array)
     if len(array) == 0:
         array.append(val)
         return array
@@ -129,12 +129,11 @@ ordinato = []
 for i in range(len(x)):
     inserimentoOrdinato(ordinato, x[i], 1)
 
-print(ordinato)
 '''
 ordinamento(x, 0)
 ordinamento(y, 1)
 
-print(y)
-print(x)
-print(coppiaPiuVicina(x, y, len(x)))
+#print(y)
+#print(x)
+#print(coppiaPiuVicina(x, y, len(x)))
 

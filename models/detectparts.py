@@ -18,10 +18,10 @@ def distance(x1,y1,x2,y2):
 
     
 
-def get_idClosePeople(persone):
+def getidClosePeople(persone):
     distMin = distance(persone[0][0], persone[0][1], persone[1][0],persone[1][1])
     idPerson = (persone[0][2], persone[1][2])
-    for i in range(len(persone)):
+    for i in_ range(len(persone)):
         for j in range(i+1,len(persone)):
             dist = distance(persone[i][0], persone[i][1], persone[j][0],persone[j][1])
             if dist < distMin:

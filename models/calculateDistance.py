@@ -13,6 +13,8 @@ import pandas
     distHipKnee(df)
     distNoseKnee(df)
     
+    
+    
     These functions perform various calculations between distances:
     distNeckHip(df) calculate the distance between the Neck and the hip of the SAME person, in order to understand if that 
     person is more o less far from the viewpoint. Before to perfrom the operation, we check which values of ankles are 

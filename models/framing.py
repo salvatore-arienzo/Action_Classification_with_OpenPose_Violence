@@ -18,6 +18,6 @@ def get_frames(inputpath, outputpath):
         cv2.imwrite(outputpath +"img"+str(nFrame)+".jpg",resize)
         nFrame+=1
     cap.release()
-    cv2.destroyAllWindows()
+    cv2.destroyAllWindows() #destroy
     return nFrame
     

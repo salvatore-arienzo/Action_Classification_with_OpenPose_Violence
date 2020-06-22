@@ -4,6 +4,9 @@ from enum import IntEnum
 class BodyPart(IntEnum):
     """
     List of all body parts
+    
+    
+    
     """
     nose = 0
     neck = 1  # this part is not from COCO
